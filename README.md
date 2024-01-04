@@ -12,6 +12,6 @@ The project aims to solve the following problems:
   And the salary details of that employee will be recorded in salaries table with from_date and to_date. write a query to obtain salary details along with title in that term of an employee.
 6. Create a Stored Procedure for retrieving information about a particular employee based on emp_no
 
-To answer these questions, the project uses Mysql commands such as SELECT, JOIN, GROUP BY, ORDER BY, and WHERE. The project also uses aggregate functions such as COUNT, AVG, MAX along with 
-window functions like ROW_NUMBER(). At some situations, subquery, self joins and Common Table Expressions(CTE) were used.
+To answer these questions, the project uses Mysql commands such as SELECT, JOIN, GROUP BY, ORDER BY, and WHERE. The project also uses aggregate functions such as COUNT, AVG, SUM, MAX and MIN as well as 
+window functions like ROW_NUMBER(), LAG(). At some situations CASE statement, subquery, self joins and Common Table Expressions(CTE) were used.
 The project shows the results of each query in a tabular format, and provides explanations and insights based on the data.
