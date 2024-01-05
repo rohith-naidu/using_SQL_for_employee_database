@@ -5,7 +5,7 @@ use employees;
 SET @max_to_date =
 	(SELECT 
 		MAX(to_date) 
-    FROM 												-- created variable and set the value = maximum to_date from salaries (9999-01-01) 
+    FROM 						-- created variable and set the value = maximum to_date from salaries (9999-01-01) 
 		salaries);
         
 SELECT
@@ -17,7 +17,7 @@ WHERE
     
     
     
-SELECT 																-- alternate query using subquery instead of variable
+SELECT 							-- alternate query using subquery instead of variable
     COUNT(emp_no) AS total_existing_employees
 FROM																							
     salaries
@@ -28,7 +28,7 @@ WHERE
             salaries);                   
     
     
---# 2. Extract latest salaries and department of employees
+-- 2. Extract latest salaries and department of employees
 
 SELECT 
     l.emp_no, de.dept_no, s.salary
@@ -119,6 +119,28 @@ FROM
     JOIN titles t ON s.emp_no = t.emp_no AND (s.from_date > t.from_date AND s.to_date < t.to_date)
 WHERE 
 	s.emp_no = 10004;
+
+
+-- 6. Create a Stored procedure for retrieving information of a particular employee based on emp_no
+
+delimiter $$ 		   							-- change the delimiter to avoid confusion with semicolon
+USE employees $$
+CREATE PROCEDURE emp_salary(IN p_emp_no INTEGER)
+BEGIN
+SELECT 
+    e.first_name, e.last_name, s.salary, s.from_date, s.to_date	
+FROM
+    employees e																
+        JOIN
+    salaries s ON e.emp_no = s.emp_no
+WHERE
+    e.emp_no = p_emp_no;
+END $$
+delimiter ;										-- restore the default delimeter
+
+
+CALL emp_salary(110022);					                        -- call the stored procedure with emp_no as argument to retrive information of that employee
+
     
     
     
