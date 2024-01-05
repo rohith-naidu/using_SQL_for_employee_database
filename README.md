@@ -15,3 +15,6 @@ The project aims to solve the following problems:
 To answer these questions, the project uses Mysql commands such as SELECT, JOIN, GROUP BY, ORDER BY, and WHERE. The project also uses aggregate functions such as COUNT, AVG, SUM, MAX and MIN as well as 
 window functions like ROW_NUMBER(), LAG(). At some situations CASE statement, subquery, self joins and Common Table Expressions(CTE) were used.
 The project shows the results of each query in a tabular format, and provides explanations and insights based on the data.
+
+Please check the attched ER drawing for reference.
+![ER Diagram](https://github.com/rohith-naidu/employee_database/assets/155378330/f850aa15-c112-495a-80d8-e92118362c26)
